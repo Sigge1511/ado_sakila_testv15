@@ -36,7 +36,7 @@ namespace ado_sakila_testv15
                     {
                         while (reader.Read())
                         {
-                            Console.WriteLine($"ID: {reader["actor_id"]}, Förnamn: {reader["first_name"]}, Efternamn: {reader["last_name"]}");
+                            Console.WriteLine($"ID: {reader["Actor_Id"]}, Förnamn: {reader["FirstName"]}, Efternamn: {reader["LastName"]}");
                         }
                     }
                 }
