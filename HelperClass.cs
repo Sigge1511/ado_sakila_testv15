@@ -61,6 +61,7 @@ namespace ado_sakila_testv15
                     if (!reader.HasRows)
                     {
                         Console.WriteLine("Inga skådespelare hittades med det namnet.");
+                        connection.Close(); //Stänger min koppling till db
                         ReturnToMenu();
                     }
                     else
@@ -69,10 +70,11 @@ namespace ado_sakila_testv15
                         {
                             Console.WriteLine($"ID: {reader["Actor_Id"]}, Förnamn: {reader["FirstName"]}, Efternamn: {reader["LastName"]}");
                         }
+                        connection.Close(); //Stänger min koppling till db
                         SearchFilmsByActorId();
                     }
                 }
-                connection.Close(); //Stänger min koppling till db
+                
             }
         }
         internal void SearchByLastName()
@@ -97,6 +99,7 @@ namespace ado_sakila_testv15
                     if (!reader.HasRows)
                     {
                         Console.WriteLine("Inga skådespelare hittades med det namnet.");
+                        connection.Close(); //Stänger min koppling till db
                         ReturnToMenu();
                     }
                     else
@@ -105,6 +108,7 @@ namespace ado_sakila_testv15
                         {
                             Console.WriteLine($"ID: {reader["Actor_Id"]}, Förnamn: {reader["FirstName"]}, Efternamn: {reader["LastName"]}");
                         }
+                        connection.Close(); //Stänger min koppling till db
                         SearchFilmsByActorId();
                     }
                 }
@@ -133,6 +137,7 @@ namespace ado_sakila_testv15
                     if (!reader.HasRows)
                     {
                         Console.WriteLine("Inga skådespelare hittades.");
+                        connection.Close(); //Stänger min koppling till db
                         ReturnToMenu();
                     }
                     else
@@ -141,7 +146,8 @@ namespace ado_sakila_testv15
                         {
                             Console.WriteLine($"Filmtitel: {reader["Title"]},\t" 
                                 + $"Betyg: {reader["Rating"]},\tSläpptes: {reader["Released"]}");
-                        }                        
+                        }
+                        connection.Close(); //Stänger min koppling till db
                     }
                 }
 
